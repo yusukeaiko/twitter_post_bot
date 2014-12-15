@@ -1,7 +1,7 @@
 # coding: utf-8
 require('twitter')
 require('yaml')
-require('./messages.rb')
+require(File.expand_path('../messages.rb', __FILE__))
 
 tw_config = YAML.load_file(File.expand_path('../twitter.yml', __FILE__))
 twitter = Twitter::REST::Client.new {|config|
@@ -13,4 +13,4 @@ twitter = Twitter::REST::Client.new {|config|
 
 msg   = dekigoto
 index = [*0..msg.count].sample
-twitter.update(msg[index])
+twitter.update(msg[index]) if msg[index].size <= 140
