@@ -22,3 +22,6 @@
 # Ignore find(Mac's filer) config files.
 .DS_Store
 
+messages.rb
+twitter.yml
+
